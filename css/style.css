@@ -1,0 +1,516 @@
+/* 1 – Изменим стили шрифтов */
+/* 2 – Удалим margin в Firefox и Safari */
+input[type="text"] {
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 1 */
+    line-height: inherit; /* 1 */
+    margin: 0; /* 2 */
+  }
+
+body{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+
+.main{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container{
+    padding: 30px 100px;
+}
+
+/* Hero */
+.hero{
+    background-color: #141024;
+    color: #FFF;
+    line-height: 160%;
+}
+
+.hero__top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hero--list{
+    display: inline-flex
+}
+
+.hero__items{
+    font-size: 20px;
+    font-weight: 400;  
+    list-style: none;
+    cursor: pointer;
+}
+
+.hero__items:not(:last-child){
+    margin-right: 40px;
+}
+
+.number{
+    color: #FFF;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.hero__main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero__title{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.hero__text{
+    font-size: 20px;
+    font-weight: 400;
+    /* margin-top: 20px; */
+    margin-bottom: 50px;
+}
+
+.hero__btn{
+    color: #FFF;
+    font-size: 18px;
+    background-color: #D52027;
+    padding: 25px 54px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero__main--right{
+    max-width: 783px;
+    max-height: 917.485px;
+    /* width: 500px; */
+    /* height: 583px; */
+}
+
+/* Медиа запросы героя*/
+/* Ноутбуки */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .hero__main--right{
+        width: 500px;
+        height: 583px;
+    }
+}
+/* Планшеты */
+@media screen and 
+(min-width:768px) and (max-width:1279px) {
+    .hero__main--right{
+        width: 300px;
+        height: 383px;
+    }
+}
+/* Телефоны */
+@media screen and 
+(max-width:767px) {
+    .hero__main--right{
+        width: 273px;
+        height: 320px;
+    }
+}
+
+/* Stats */
+
+.stats{
+    color: #141024;
+    font-weight: 600;
+}
+
+.stats__review{
+    font-size: 30px;
+    /* margin-bottom: 60px; */
+}
+
+.stats__chars{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats__item:not(:last-child){
+    margin-right: 40px;
+}
+
+.stat__titles{
+    color: #D52027;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.stat__texts{
+    opacity: .7;
+    font-size: 18px;
+    font-weight: 400;
+}
+/* Медиа запросы статы */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .container--stats{
+        padding: 70px 230px;
+        /* padding-right: ; */
+    }
+    .stats__review{
+        max-width: 50ch;
+        font-size: 20px;
+    }
+    .stat__titles{
+        font-size: 54px;
+    }
+    .stat__texts{
+        font-size: 18px;
+    }  
+}
+
+/* После */
+.after{
+    padding: 100px 380px;
+    background-color: #F9F9F9;
+    color: #141024;
+}
+
+.after__title{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 60px;
+}
+
+.after__list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.after__item{
+    max-width: 30%;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.after__item--title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.after__item--text{
+    font-size: 18px;
+    opacity: .7;
+}
+
+.tooltip{
+    position: relative;
+}
+
+.tooltip__pic{
+    padding: 5px 3px;
+}
+
+.tooltip--text{
+    position: absolute;
+    top: -2.8em;
+    right: -14em;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 400;  
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 0px rgba(20, 16, 36, 0.10);
+    transition: ease-out .8s;
+}
+
+.tooltip .tooltip--text {
+    opacity: 0;
+}
+
+.tooltip:hover .tooltip--text {
+    opacity: 1;
+}
+
+/* Медиа запросы после */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .after{
+        padding: 70px 230px;
+        /* padding-right: ; */
+    }
+    .tooltip{
+        padding: 3px 5px;
+    }
+}
+
+/* Тренера */
+.couches__container{
+    padding: 120px 0 120px 380px;
+}
+
+.couches__title{
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.couches__slider{
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: scroll;
+}
+
+.slider__items{
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+/* .slider__item--main{} */
+
+.item--main-pic{
+    border-radius: 20px;
+    width: 360px;
+    height: 500px;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+}
+
+.slider__item--bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.item--name{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.item--job{
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .7;
+    margin-bottom: 20px;
+}
+
+.item--link{
+    color: #D52027;
+    font-size: 18px;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Медиа запросы тренеров */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .couches__container{
+        padding: 70px 0px 70px 230px;
+        /* padding-right: ; */
+    }
+}
+
+/* Тарифы */
+.packs__container{
+    padding: 140px 380px;
+    padding-top: 0;
+    margin-bottom: 120px;
+}
+
+.packs__title{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.packs__main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.packs__tarif{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(20, 16, 36, 0.20);
+}
+
+.packs__tarif:not(:last-child){
+    margin-right: 40px;
+}
+
+.packs__tarif--pro{
+    background-color: #141024;
+    color: #FFF;
+    border: none;
+}
+
+.packs__tarif--pro .packs__tarif--price{
+    margin-top: 83px;
+}
+
+.packs__tarif--pro .packs__tarif--btn{
+    margin-top: 50px;
+}
+
+.packs__tarif--title{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.packs__tarif--price{
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 63px;
+    margin-bottom: 20px;
+}
+
+.packs__tarif--text{
+    font-size: 18px;
+    font-weight: 400;
+    opacity: .7;
+}
+
+.packs__tarif--btn{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 25px 54px;
+    color: #FFF;
+    background-color: #D52027;
+    border-radius: 6px;
+    margin-top: 60px;
+}
+
+/* Медиа запросы по тарифам */
+/* Ноутбуки */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .packs__container{
+        padding: 70px 200px;
+        padding-top: 0;
+    }
+    .packs__tarif--title{
+        font-size: 25px;
+    }
+    .packs__tarif--price{
+        font-size: 38px;
+    }
+    .packs__tarif--btn{
+        padding: 15px 49px;
+    }
+}
+/* Планшеты */
+/* @media screen and 
+(min-width:768px) and (max-width:1279px) {
+
+} */
+/* Телефоны */
+/* @media screen and 
+(max-width:767px) {
+
+} */
+
+/* Регистрация */
+.request__container{
+    color: #FFF;
+    background-color: #D52027;
+    padding: 87px 440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.request__title{
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 130%; /* 46.8px */
+}
+
+.request__subtitle{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%; /* 26px */
+}
+
+.request__forms{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.request__list{   
+    border: none;
+}
+
+.request__list input, button{
+    border-radius: 5px;
+    /* padding: 1.111em; 20px */
+    padding: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* .request__list li input{} */
+
+.request__list :not(:last-child){
+    margin-bottom: 10px;
+}
+
+.request__list button{
+    color: rgb(255, 255, 255);
+    background-color:#141024;
+    cursor: pointer;
+}
+
+
+/* Медиа запросы по регистрации */
+/* Ноутбуки */
+@media screen and 
+(min-width:1280px) and (max-width:1599px) {
+    .request__container{
+        padding: 70px 330px;
+    }
+    .request__subtitle{
+        font-size: 17px;
+    }
+}
+/* Планшеты */
+/* @media screen and 
+(min-width:768px) and (max-width:1279px) {
+
+} */
+/* Телефоны */
+/* @media screen and 
+(max-width:767px) {
+
+} */
