@@ -20,9 +20,9 @@
                 <div class="hero__top">
                     <span class="logo">ROBO.SCHOOL</span>
                     <ul class="hero--list">
-                        <li class="hero__items">О школе</li>
-                        <li class="hero__items">Тренеры</li>
-                        <li class="hero__items">Стоимость</li>
+                        <li class="hero__items"><a href="#stats">О школе</a></li>
+                        <li class="hero__items"><a href="#couches">Тренеры</a></li>
+                        <li class="hero__items"><a href="#packs">Стоимость</a></li>
                     </ul>
                     <a class="number" href="tel:+78000001122">+7 800 000 11 22</a>
                 </div>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </section>
-        <section class="stats">
+        <section class="stats" id="stats">
             <div class="container container--stats">
                 <p class="stats__review">
                     <b>Robo School</b> – учреждение для формирования кадрового педагогического резерва в сфере робототехники и программирования
@@ -104,14 +104,14 @@
                 </div>
             </div>
         </section>
-        <section class="couches">
+        <section class="couches" id="couches">
             <div class="couches__container">
                 <div class="couches__title">
                     Профессиональные тренеры
                 </div>
-                <div class="couches__main">
-                    <div class="couches__slider">
-                        <div class="slider__items">
+                <div class="couches__main swiper">
+                    <div class="couches__slider swiper-wrapper">
+                        <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch1.jpg" alt="" class="item--main-pic">
                             </div>
@@ -121,7 +121,7 @@
                                 <button class="item--link">Подробнее</button>
                             </div>
                         </div>
-                        <div class="slider__items">
+                        <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch2.jpg" alt="" class="item--main-pic">
                             </div>
@@ -131,7 +131,7 @@
                                 <button class="item--link">Подробнее</button>
                             </div>
                         </div>
-                        <div class="slider__items">
+                        <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch3.jpg" alt="" class="item--main-pic">
                             </div>
@@ -141,7 +141,7 @@
                                 <button class="item--link">Подробнее</button>
                             </div>
                         </div>
-                        <div class="slider__items">
+                        <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch4.jpg" alt="" class="item--main-pic">
                             </div>
@@ -151,7 +151,7 @@
                                 <button class="item--link">Подробнее</button>
                             </div>
                         </div>
-                        <div class="slider__items">
+                        <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch5.jpg" alt="" class="item--main-pic">
                             </div>
@@ -162,16 +162,21 @@
                             </div>
                         </div>
                     </div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <!-- If we need scrollbar -->
+                    <div class="swiper-scrollbar"></div>
                 </div>
             </div>
         </section>
-        <section class="packs">
+        <section class="packs" id="packs">
             <div class="packs__container">
                 <h2 class="packs__title">Выберите нужный пакет</h2>
                 <div class="packs__main">
                     <div class="packs__tarif packs__tarif--pro">
                         <div class="packs__tarif--title">– PRO –</div>
-                        <div class="packs__tarif--price">20.000 p</div>
+                        <div class="packs__tarif--price">20.000 ₽</div>
                         <div class="packs__tarif--text">
                             УМК по робототехнике и программированию
                         </div>
@@ -179,13 +184,13 @@
                     </div>
                     <div class="packs__tarif">
                         <div class="packs__tarif--title">– ROBO –</div>
-                        <div class="packs__tarif--price">15.000 p</div>
+                        <div class="packs__tarif--price">15.000 ₽</div>
                         <div class="packs__tarif--text">УМК по робототетхнике </div>
                         <div class="packs__tarif--btn">Оставить заявку</div>
                     </div>
                     <div class="packs__tarif">
                         <div class="packs__tarif--title">– PROG –</div>
-                        <div class="packs__tarif--price">10.000 p</div>
+                        <div class="packs__tarif--price">10.000 ₽</div>
                         <div class="packs__tarif--text">УМК по программированию</div>
                         <div class="packs__tarif--btn">Оставить заявку</div>
                     </div>
@@ -206,16 +211,27 @@
                     <form action="#" method="post" target="_blank">
                         <fieldset class="request__list">
                             <input type="text" name="name" placeholder="Имя" id="name" required>
-                            <input type="tel" name="phone" placeholder="Телефон" id="number" maxlength="21" required>
-                            <input type="email" name="mail" placeholder="E-mail" id="email" required>
-                            <button type="submit">Оформить заявку</button>
+                            <input type="tel" name="phone" placeholder="Телефон" id="number" maxlength="21" autocomplete="off" required>
+                            <input type="email" name="mail" placeholder="E-mail" id="email" autocomplete="off" required>
+                            <input type="submit" value="Оформить заявку">
                         </fieldset>
                     </form>   
+                </div>
+                <div class="request-perc">
+                    <img class="request-img" src="pics/rtghetdxgb.png" alt="">
+                    <img class="request-imgs" src="pics/rtghetdxgb.png" alt="">
                 </div>
             </div>
         </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div class="footer__top">
+            <span class="logo">ROBO.SCHOOL</span>
+            <a class="number" href="tel:+78000001122">+7 800 000 11 22</a>
+        </div>
+        <small class="copyright">© ROBO.SCHOOL</small>
+    </footer>
+
 
 </body>
 </html>
