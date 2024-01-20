@@ -1,17 +1,68 @@
-/* 1 – Изменим стили шрифтов */
-/* 2 – Удалим margin в Firefox и Safari */
-input[type="text"] {
-    font-family: inherit; /* 1 */
-    font-size: inherit; /* 1 */
-    line-height: inherit; /* 1 */
-    margin: 0; /* 2 */
-  }
+/* Обнуление */
+*{padding:0;margin:0;border:0;}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+nav,footer,header,aside{display: block;}
+html,body{height: 100%;width: 100%;font-size: 100%;line-height: 1.7;font-size: 16px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%; }
+input,button,textarea{font-family: inherit;}
+input::-ms-clear{display:none;}
+button{cursor:pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration:none;cursor:pointer;}
+a:hover{text-decoration:none;}
+ul li{list-style:none;}
+img{vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
+/* -------- */
 
+/* Удалим margin в Firefox и Safari */
+input[type="text"] {
+    margin: 0;
+}
 body{
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     margin: 0;
+    overflow-x: hidden;
 }
+
+/*  */
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 24px; /* ширина для вертикального скролла */
+    background-color: #143861;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #141024;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #f6f8f4;
+}
+
+/*  */
 
 .main{
     max-width: 1920px;
@@ -57,6 +108,10 @@ body{
     margin-right: 40px;
 }
 
+.hero__items a{
+    color: #FFF;
+}
+
 .number{
     color: #FFF;
     text-decoration: none;
@@ -67,7 +122,7 @@ body{
 .hero__main{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .hero__title{
@@ -79,8 +134,9 @@ body{
 .hero__text{
     font-size: 20px;
     font-weight: 400;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     margin-bottom: 50px;
+    max-width: 23em;
 }
 
 .hero__btn{
@@ -133,9 +189,13 @@ body{
     font-weight: 600;
 }
 
+.container--stats{
+    padding: 120px 380px;
+}
+
 .stats__review{
     font-size: 30px;
-    /* margin-bottom: 60px; */
+    margin-bottom: 60px;
 }
 
 .stats__chars{
@@ -227,9 +287,22 @@ body{
     padding: 5px 3px;
 }
 
-.tooltip--text{
+/* .tooltip--text{
     position: absolute;
     top: -2.8em;
+    right: -14em;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 400;  
+    background-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 0px rgba(20, 16, 36, 0.10);
+    transition: ease-out .8s;
+} */
+
+.tooltip--text{
+    position: absolute;
+    top: -3.5em;
     right: -14em;
     padding: 15px 20px;
     font-size: 16px;
@@ -273,17 +346,20 @@ body{
 
 .couches__slider{
     max-width: 1920px;
-    margin: 0 auto;
-    display: flex;
+    /* margin: 0 auto; */
+    /* display: flex;
     flex-direction: row;
     align-items: center;
-    overflow: scroll;
+    flex-wrap: nowrap; */
 }
 
 .slider__items{
     display: flex;
     flex-direction: column;
-    margin-right: 40px;
+    flex: 0 0 auto;
+    /* margin-right: 40px;
+    margin-bottom: 77px; */
+    margin-bottom: 100px;
 }
 
 /* .slider__item--main{} */
@@ -294,6 +370,11 @@ body{
     height: 500px;
     flex-shrink: 0;
     margin-bottom: 20px;
+}
+
+.item--main-pic img{
+    width: 100%;
+    height: 100%;
 }
 
 .slider__item--bottom{
@@ -325,6 +406,44 @@ body{
     cursor: pointer;
 }
 
+.swiper-button-prev, .swiper-button-next{
+    background-color: #141024;
+    color: #fff;
+    border-radius: 25px;
+    padding: 26px;
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 96%;
+}
+.swiper-button-prev{
+    --swiper-navigation-sides-offset: 90%;
+}
+
+.swiper-scrollbar{
+    --swiper-scrollbar-bottom: 0px;
+    --swiper-scrollbar-border-radius: 40px;
+    --swiper-scrollbar-sides-offset: 38%;
+    --swiper-scrollbar-bg-color: rgba(20, 16, 36, 0.08);
+    --swiper-scrollbar-drag-bg-color: #141024;
+}
+
+
+/* .prev-button,
+.next-button {
+    width: 33.3px;
+    height: 33.3px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #141024;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+} */
+
+/* .prev-button{
+    background-image: url("../pics/arrow.svg");
+    background-size: 33.333px 33.333px;
+} */
+
 /* Медиа запросы тренеров */
 @media screen and 
 (min-width:1280px) and (max-width:1599px) {
@@ -336,14 +455,14 @@ body{
 
 /* Тарифы */
 .packs__container{
-    padding: 140px 380px;
+    padding: 120px 380px;
     padding-top: 0;
-    margin-bottom: 120px;
 }
 
 .packs__title{
     font-size: 50px;
     font-weight: 600;
+    margin-bottom: 60px;
 }
 
 .packs__main{
@@ -361,6 +480,7 @@ body{
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(20, 16, 36, 0.20);
+    text-align: center;
 }
 
 .packs__tarif:not(:last-child){
@@ -408,6 +528,7 @@ body{
     background-color: #D52027;
     border-radius: 6px;
     margin-top: 60px;
+    cursor: pointer;
 }
 
 /* Медиа запросы по тарифам */
@@ -446,13 +567,24 @@ body{
     padding: 87px 440px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.request img{
+    opacity: .2;
+}
+
+.request__text{
+    display: flex;
+    flex-direction: column;
 }
 
 .request__title{
     font-size: 36px;
     font-weight: 600;
     line-height: 130%; /* 46.8px */
+    margin: 20px 0px;
 }
 
 .request__subtitle{
@@ -464,34 +596,69 @@ body{
 .request__forms{
     font-size: 18px;
     font-weight: 400;
+    z-index: 2;
 }
 
 .request__list{   
     border: none;
 }
 
-.request__list input, button{
+.request__list input{
+    font-size: 18px;
     border-radius: 5px;
-    /* padding: 1.111em; 20px */
-    padding: 20px;
+    padding: 1em;/* 20px */
+    padding-right: 9em;
+    /* padding: 20px; */
     border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid #fff;
 }
-
-/* .request__list li input{} */
 
 .request__list :not(:last-child){
     margin-bottom: 10px;
 }
 
-.request__list button{
+.request__list input[type=submit]{
     color: rgb(255, 255, 255);
     background-color:#141024;
+    padding-right: 1em;
     cursor: pointer;
+    border: none;
+}
+.request__list input[type=submit]:focus {
+    border: none;
 }
 
+.request__list input:focus {
+    border: 2px solid #555;
+}
+/* input:invalid {
+    background-color: #ffdddd;
+}
+input:valid {
+    background-color: #ddffdd;
+}*/
+
+.request-perc{
+    position: relative;
+    border-bottom: 15px solid #141024;
+}
+
+.request-perc img{
+    color: #fff;
+    position: absolute;
+    bottom: -125px;
+}
+
+.request-img{
+    left: 0;
+}
+
+.request-imgs{
+    right: 0;
+}
 
 /* Медиа запросы по регистрации */
 /* Ноутбуки */
@@ -514,3 +681,27 @@ body{
 (max-width:767px) {
 
 } */
+
+/* Подвал */
+.footer{
+    padding: 40px 100px;
+    background-color: #141024;
+}
+
+.footer__top{
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 160%; /* 48px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+    opacity: .7;
+}
