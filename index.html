@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/script.js"></script>
     <title>ROBO SCHOOL</title>
@@ -20,9 +23,9 @@
                 <div class="hero__top">
                     <span class="logo">ROBO.SCHOOL</span>
                     <ul class="hero--list">
-                        <li class="hero__items"><a href="#stats">О школе</a></li>
-                        <li class="hero__items"><a href="#couches">Тренеры</a></li>
-                        <li class="hero__items"><a href="#packs">Стоимость</a></li>
+                        <li class="hero__items"><a href="#stats" class="scroll-to">О школе</a></li>
+                        <li class="hero__items"><a href="#couches" class="scroll-to">Тренеры</a></li>
+                        <li class="hero__items"><a href="#packs" class="scroll-to">Стоимость</a></li>
                     </ul>
                     <a class="number" href="tel:+78000001122">+7 800 000 11 22</a>
                 </div>
@@ -31,9 +34,9 @@
                         <h1 class="hero__title">ROBO SCHOOL</h1>
                         <p class="hero__text">Курсы повышения квалификации 
                             по робототехнике для педагогов начальной школы</p>
-                        <button class="hero__btn">Записаться на курс</button>
+                        <a href="#request" class="hero__btn scroll-to">Записаться на курс</a>
                     </div>
-                    <img class="hero__main--right" src="pics/heroPic.png"></img>
+                    <img class="hero__main--right" src="pics/heroPic.png">
                 </div>
             </div>
         </section>
@@ -55,7 +58,7 @@
                             Школ, в которых запущена робототехника
                         </p>
                     </div>
-                    <div class="stat__item">
+                    <div class="stat__item">                       
                         <h3 class="stat__titles">100</h3>
                         <p class="stat__texts">
                             Педагогов прошедших курсы повышения квалификации
@@ -71,7 +74,7 @@
             </div>
         </section>
         <section class="after">
-            <div class="container__after">
+            <div class="container container__after">
                 <h2 class="after__title">Что вы получите после курса</h2>
                 <div class="after__list">
                     <div class="after__item">
@@ -109,8 +112,8 @@
                 <div class="couches__title">
                     Профессиональные тренеры
                 </div>
-                <div class="couches__main swiper">
-                    <div class="couches__slider swiper-wrapper">
+                <div class="couches__main">
+                    <div class="couches__slider">
                         <div class="slider__items swiper-slide">
                             <div class="slider__item--main">
                                 <img src="pics/couch1.jpg" alt="" class="item--main-pic">
@@ -118,7 +121,117 @@
                             <div class="slider__item--bottom">
                                 <h5 class="item--name">Ирина Лайм</h5>
                                 <p class="item--job">преподаватель по робототехнике</p>
-                                <button class="item--link">Подробнее</button>
+                                <button class="item--link" id="open" data-modal="myModal1">Подробнее</button>
+                            </div>
+
+                            <div id="overlay"></div>
+                            <div class="modal" id="modal myModal1">
+                                <div class="modal__wrap container">
+                                    <div class="modal__top">
+                                        <div class="modal__top--left">
+                                            <img src="pics/couch1.jpg" alt="Portrait" width="160" class="modal__pic">
+                                            <div class="modal__acc">
+                                                <h5 class="modal__name">Марина Орлова</h5>
+                                                <h5 class="modal__job">преподаватель по робототехнике</h5>
+                                                <ul class="modal__list">
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--inst" target="_blank" aria-label="Link to Instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="modal__close" id="close" data-modal="myModal1">Закрыть</button>  
+                                    </div>
+
+                                    <div class="modal__main tab" id="tab-1">
+                                        <nav class="tabs__nav">
+                                            <a href="#tab_01" class="tabs__item  tab-btn-active" id="tabs__item" data-target-id="0">Образование</a>
+                                            <a href="#tab_02" class="tabs__item" id="tabs__item" data-target-id="1">Опыт работы</a>
+                                            <a href="#tab_03" class="tabs__item tab-bnt-disabled" id="tabs__item" data-target-id="2">Награды</a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block tabs__block--show" id="#tab_01"  data-id="0">
+                                                    <p class="tabs__text">
+                                                        Сентябрь 1995 — Июнь 2000<br>
+                                                        Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                        Факультет: Компьютерных наук и технологий<br>
+                                                        Специальность: Математика и компьютерные науки<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_02"  data-id="1">
+                                                <h6 class="tabs__title">Опыт работы</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                            <div class="tabs__block tabs__block--disabled" id="#tab_03"  data-id="2">
+                                                <h6 class="tabs__title">Награды</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="slider__items swiper-slide">
@@ -128,7 +241,117 @@
                             <div class="slider__item--bottom">
                                 <h5 class="item--name">Марина Орлова</h5>
                                 <p class="item--job">преподаватель по робототехнике</p>
-                                <button class="item--link">Подробнее</button>
+                                <button class="item--link" id="open" data-modal="myModal1">Подробнее</button>
+                            </div>
+
+                            <div id="overlay"></div>
+                            <div class="modal" id="modal myModal2">
+                                <div class="modal__wrap container">
+                                    <div class="modal__top">
+                                        <div class="modal__top--left">
+                                            <img src="pics/couch2.jpg" alt="Portrait" width="160" class="modal__pic">
+                                            <div class="modal__acc">
+                                                <h5 class="modal__name">Марина Орлова</h5>
+                                                <h5 class="modal__job">преподаватель по робототехнике</h5>
+                                                <ul class="modal__list">
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--inst" target="_blank" aria-label="Link to Instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="modal__close" id="close" data-modal="myModal2">Закрыть</button>  
+                                    </div>
+
+                                    <div class="modal__main tab" id="tab-2">
+                                        <nav class="tabs__nav">
+                                            <a href="#tab_01" class="tabs__item  tab-btn-active" id="tabs__item" data-target-id="0">Образование</a>
+                                            <a href="#tab_02" class="tabs__item" id="tabs__item" data-target-id="1">Опыт работы</a>
+                                            <a href="#tab_03" class="tabs__item" id="tabs__item" data-target-id="2">Награды</a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block tabs__block--show" id="#tab_01"  data-id="0">
+                                                    <p class="tabs__text">
+                                                        Сентябрь 1995 — Июнь 2000<br>
+                                                        Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                        Факультет: Компьютерных наук и технологий<br>
+                                                        Специальность: Математика и компьютерные науки<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_02"  data-id="1">
+                                                <h6 class="tabs__title">Опыт работы</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_03"  data-id="2">
+                                                <h6 class="tabs__title">Награды</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="slider__items swiper-slide">
@@ -138,7 +361,117 @@
                             <div class="slider__item--bottom">
                                 <h5 class="item--name">Максим Петров</h5>
                                 <p class="item--job">преподаватель по программированию</p>
-                                <button class="item--link">Подробнее</button>
+                                <button class="item--link" id="open" data-modal="myModal1">Подробнее</button>
+                            </div>
+
+                            <div id="overlay"></div>
+                            <div class="modal" id="modal myModal3">
+                                <div class="modal__wrap container">
+                                    <div class="modal__top">
+                                        <div class="modal__top--left">
+                                            <img src="pics/couch3.jpg" alt="Portrait" width="160" class="modal__pic">
+                                            <div class="modal__acc">
+                                                <h5 class="modal__name">Марина Орлова</h5>
+                                                <h5 class="modal__job">преподаватель по робототехнике</h5>
+                                                <ul class="modal__list">
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--inst" target="_blank" aria-label="Link to Instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="modal__close" id="close" data-modal="myModal3">Закрыть</button>  
+                                    </div>
+
+                                    <div class="modal__main tab" id="tab-3">
+                                        <nav class="tabs__nav">
+                                            <a href="#tab_01" class="tabs__item  tab-btn-active" id="tabs__item" data-target-id="0">Образование</a>
+                                            <a href="#tab_02" class="tabs__item" id="tabs__item" data-target-id="1">Опыт работы</a>
+                                            <a href="#tab_03" class="tabs__item tab-bnt-disabled" id="tabs__item" data-target-id="2">Награды</a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block tabs__block--show" id="#tab_01"  data-id="0">
+                                                    <p class="tabs__text">
+                                                        Сентябрь 1995 — Июнь 2000<br>
+                                                        Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                        Факультет: Компьютерных наук и технологий<br>
+                                                        Специальность: Математика и компьютерные науки<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_02"  data-id="1">
+                                                <h6 class="tabs__title">Опыт работы</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                            <div class="tabs__block tabs__block--disabled" id="#tab_03"  data-id="2">
+                                                <h6 class="tabs__title">Награды</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="slider__items swiper-slide">
@@ -148,7 +481,117 @@
                             <div class="slider__item--bottom">
                                 <h5 class="item--name">Константин Назаров</h5>
                                 <p class="item--job">преподаватель по робототехнике</p>
-                                <button class="item--link">Подробнее</button>
+                                <button class="item--link" id="open" data-modal="myModal1">Подробнее</button>
+                            </div>
+
+                            <div id="overlay"></div>
+                            <div class="modal" id="modal myModal4">
+                                <div class="modal__wrap container">
+                                    <div class="modal__top">
+                                        <div class="modal__top--left">
+                                            <img src="pics/couch4.jpg" alt="Portrait" width="160" class="modal__pic">
+                                            <div class="modal__acc">
+                                                <h5 class="modal__name">Марина Орлова</h5>
+                                                <h5 class="modal__job">преподаватель по робототехнике</h5>
+                                                <ul class="modal__list">
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--inst" target="_blank" aria-label="Link to Instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="modal__close" id="close" data-modal="myModal4">Закрыть</button>  
+                                    </div>
+
+                                    <div class="modal__main tab" id="tab-4">
+                                        <nav class="tabs__nav">
+                                            <a href="#tab_01" class="tabs__item  tab-btn-active" id="tabs__item" data-target-id="0">Образование</a>
+                                            <a href="#tab_02" class="tabs__item" id="tabs__item" data-target-id="1">Опыт работы</a>
+                                            <a href="#tab_03" class="tabs__item" id="tabs__item" data-target-id="2">Награды</a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block tabs__block--show" id="#tab_01"  data-id="0">
+                                                    <p class="tabs__text">
+                                                        Сентябрь 1995 — Июнь 2000<br>
+                                                        Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                        Факультет: Компьютерных наук и технологий<br>
+                                                        Специальность: Математика и компьютерные науки<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_02"  data-id="1">
+                                                <h6 class="tabs__title">Опыт работы</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_03"  data-id="2">
+                                                <h6 class="tabs__title">Награды</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="slider__items swiper-slide">
@@ -158,15 +601,120 @@
                             <div class="slider__item--bottom">
                                 <h5 class="item--name">Лиза Весенняя</h5>
                                 <p class="item--job">преподаватель по программированию</p>
-                                <button class="item--link">Подробнее</button>
+                                <button class="item--link" id="open" data-modal="myModal1">Подробнее</button>
                             </div>
+
+                            <div id="overlay"></div>
+                            <div class="modal" id="modal myModal5">
+                                <div class="modal__wrap container">
+                                    <div class="modal__top">
+                                        <div class="modal__top--left">
+                                            <img src="pics/couch5.jpg" alt="Portrait" width="160" class="modal__pic">
+                                            <div class="modal__acc">
+                                                <h5 class="modal__name">Марина Орлова</h5>
+                                                <h5 class="modal__job">преподаватель по робототехнике</h5>
+                                                <ul class="modal__list">
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--fb" target="_blank" aria-label="Link to Facebook"></a></li>
+                                                        <li class="social__elem"><a href="#" class="social__link social__link--inst" target="_blank" aria-label="Link to Instagram"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <button class="modal__close" id="close" data-modal="myModal5">Закрыть</button>  
+                                    </div>
+
+                                    <div class="modal__main tab" id="tab-1">
+                                        <nav class="tabs__nav">
+                                            <a href="#tab_01" class="tabs__item  tab-btn-active" id="tabs__item" data-target-id="0">Образование</a>
+                                            <a href="#tab_02" class="tabs__item" id="tabs__item" data-target-id="1">Опыт работы</a>
+                                            <a href="#tab_03" class="tabs__item tab-bnt-disabled" id="tabs__item" data-target-id="2">Награды</a>
+                                        </nav>
+                                        <div class="tabs__body">
+                                            <div class="tabs__block tabs__block--show" id="#tab_01"  data-id="0">
+                                                    <p class="tabs__text">
+                                                        Сентябрь 1995 — Июнь 2000<br>
+                                                        Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                        Факультет: Компьютерных наук и технологий<br>
+                                                        Специальность: Математика и компьютерные науки<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                                    <p class="tabs__text">
+                                                        Ноябрь 2020 — Февраль 2021<br>
+                                                        Программа дополнительного образования «3D Моделирование»<br>
+                                                        Место проведения: Институт дополнительного образования «Политех»<br>
+                                                        Форма обучения: Очная
+                                                    </p>
+                                            </div>
+                                            <div class="tabs__block" id="#tab_02"  data-id="1">
+                                                <h6 class="tabs__title">Опыт работы</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                            <div class="tabs__block tabs__block--disabled" id="#tab_03"  data-id="2">
+                                                <h6 class="tabs__title">Награды</h6>
+                                                <p class="tabs__text">
+                                                    Сентябрь 1995 — Июнь 2000<br>
+                                                    Санкт-Петербургский политехнический университет Петра Великого<br>
+                                                    Факультет: Компьютерных наук и технологий<br>
+                                                    Специальность: Математика и компьютерные науки<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <h6 class="tabs__title">Курсы и тренинги</h6>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                                <p class="tabs__text">
+                                                    Ноябрь 2020 — Февраль 2021<br>
+                                                    Программа дополнительного образования «3D Моделирование»<br>
+                                                    Место проведения: Институт дополнительного образования «Политех»<br>
+                                                    Форма обучения: Очная
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
                 </div>
             </div>
         </section>
@@ -197,7 +745,7 @@
                 </div>
             </div>
         </section>
-        <section class="request">
+        <section class="request" id="request">  
             <div class="request__container">
                 <div class="request__text">
                     <h3 class="request__title">
@@ -217,11 +765,12 @@
                         </fieldset>
                     </form>   
                 </div>
-                <div class="request-perc">
-                    <img class="request-img" src="pics/rtghetdxgb.png" alt="">
-                    <img class="request-imgs" src="pics/rtghetdxgb.png" alt="">
+                <div class="request-back">
+                    <img class="request-imgg" src="pics/rtghetdxgb.png" alt="" >
+                    <img class="request-img" src="pics/rtghetdxgb.png" alt="" >
                 </div>
             </div>
+            
         </section>
     </main>
     <footer class="footer">
@@ -231,7 +780,5 @@
         </div>
         <small class="copyright">© ROBO.SCHOOL</small>
     </footer>
-
-
 </body>
 </html>
